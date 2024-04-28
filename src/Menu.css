@@ -3,3 +3,18 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
+
+.menu-button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  width: 360px;
+  height: 120px;
+  color: #fff;
+}
+.menu-button a {
+  color: #fff;
+  text-decoration: none;
+}
