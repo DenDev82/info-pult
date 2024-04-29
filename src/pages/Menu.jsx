@@ -5,6 +5,11 @@ function Menu() {
   return (
     <div className="menu-div">
       <MenuButton stranica="osoblje" />
+      <MenuButton stranica="autor" />
+      <MenuButton stranica="pocetna" />
+      <MenuButton stranica="odjeljenja" />
+      <MenuButton stranica="slike" />
+      <MenuButton stranica="OSSC" />
     </div>
   );
 }
