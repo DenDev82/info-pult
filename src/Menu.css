@@ -17,14 +17,18 @@
   width: 360px;
   height: 120px;
   color: #fff;
-  font-size: 24px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  transition: 0.5s;
+  font: normal 900 24px "Roboto", sans-serif;
   border: 2px solid #000;
   border-radius: 12px;
 }
-.menu-button a {
+.menu-button:hover {
+  background: linear-gradient(#4e4feb, #068fff);
+  transform: scale(1.1);
+}
+.menu-button p {
   color: #fff;
   text-decoration: none;
   text-transform: capitalize;
+  user-select: none;
 }

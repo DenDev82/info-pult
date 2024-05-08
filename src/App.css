@@ -2,8 +2,13 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-image: url("./assets/pozadina2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .App {
-  background-image: url("./assets/pozadina.jpeg");
   width: 1920px;
   height: 1080px;
   display: flex;
