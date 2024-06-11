@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background-image: url("./assets/pozadina.jpeg");
+  background-image: url("./assets/pozadina.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -37,4 +37,7 @@ body {
   height: 512px;
   font-size: 512px;
   user-select: none;
+}
+.osoblje {
+  margin-top: 10%;
 }
