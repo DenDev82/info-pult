@@ -2,10 +2,22 @@
   padding: 0;
   margin: 0;
 }
+
 .osoblje {
   display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px 40px;
-  padding: 10% 10%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 10%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.slika {
+  text-align: center;
+}
+
+.slika img {
+  width: 100%;
+  height: auto;
 }

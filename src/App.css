@@ -10,7 +10,7 @@ body {
 }
 .App {
   width: 1920px;
-  height: 1080px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +24,7 @@ body {
   border-radius: 50%;
   aspect-ratio: 1/1;
   height: 512px;
+  width: 512px;
   background-image: url("./assets/Jovan_Cvijic.png");
   background-size: cover;
   background-repeat: none;
@@ -37,7 +38,4 @@ body {
   height: 512px;
   font-size: 512px;
   user-select: none;
-}
-.osoblje {
-  margin-top: 10%;
 }

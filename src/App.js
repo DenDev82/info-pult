@@ -9,6 +9,7 @@ import OSSC from "./pages/OSSC";
 import Menu from "./pages/Menu";
 import OProjektu from "./pages/OProjektu";
 import Admin from "./pages/Admin";
+import Video from "./pages/Video";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/video" element={<Video />}></Route>
           <Route path="/osoblje" element={<Osoblje />}></Route>
           <Route path="/slike" element={<Slike />} />
           <Route path="/o_projektu" element={<OProjektu />} />
