@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 import imageList from "../imagelist.json";
 import Slika from "../components/Slika";
 import "../Osoblje.css";
+import { useAdminStore } from "../admin-store";
 
 const Osoblje = () => {
   const [osoblje, setOsoblje] = useState([]);
-
+  const { isAdmin, setAdmin } = useAdminStore((state) => ({
+    isAdmin: state.isAdmin,
+    setAdmin: state.setAdmin,
+  }));
   useEffect(() => {
     setOsoblje(imageList);
   }, []);
@@ -19,6 +23,7 @@ const Osoblje = () => {
           name={osoblje.name}
         />
       ))}
+      {isAdmin ? <p>ISUS</p> : <p>NIJE ISUS</p>}
     </div>
   );
 };

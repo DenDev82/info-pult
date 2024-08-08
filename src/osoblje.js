@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const imageDir = path.join(__dirname, "assets", "Profesori");
+const imageDir = path.join(__dirname, "./public", "Profesori");
 const outputfilepath = path.join(__dirname, "imagelist.json");
 
 const generateImageList = () => {

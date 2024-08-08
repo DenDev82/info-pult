@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import AdminMenu from "./AdminMenu";
 import "../Admin.css";
+import { useAdminStore } from "../admin-store";
 
 const Admin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+
+  const { isAdmin, setAdmin } = useAdminStore();
 
   const handleLogin = () => {
     if (username === "admin" && password === "123") {
       console.log("Masala");
-      setLoggedIn(true);
+      setAdmin(true);
+      window.location.href = "/osoblje";
     } else {
       console.log("Invalid credentials");
     }
   };
-  if (!loggedIn) {
+  if (!isAdmin) {
     return (
       <>
         <p>Username:</p>
