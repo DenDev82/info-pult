@@ -10,3 +10,9 @@
   height: 300px;
   width: 200px;
 }
+
+.remove-btn {
+  background: linear-gradient(#068fff, #4e4feb);
+  filter: hue-rotate(135deg);
+  margin-left: 15%;
+}

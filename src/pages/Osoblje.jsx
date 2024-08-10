@@ -7,20 +7,25 @@ import { useAdminStore } from "../admin-store";
 
 const Osoblje = () => {
   const [osoblje, setOsoblje] = useState([]);
-  const { isAdmin, setAdmin } = useAdminStore((state) => ({
+  const { isAdmin } = useAdminStore((state) => ({
     isAdmin: state.isAdmin,
     setAdmin: state.setAdmin,
   }));
   useEffect(() => {
     setOsoblje(imageList);
   }, []);
+  const removePerson = (id) => {
+    setOsoblje(osoblje.filter((person) => person.id !== id));
+  };
   return (
     <div className="osoblje">
       {osoblje.map((osoblje) => (
         <Slika
-          key={osoblje.filename}
+          key={osoblje.id}
+          id={osoblje.id}
           filename={`/Profesori/${osoblje.filename}`}
           name={osoblje.name}
+          onRemove={removePerson}
         />
       ))}
       {isAdmin ? <p>ISUS</p> : <p>NIJE ISUS</p>}

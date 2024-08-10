@@ -1,7 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+// import { v4 as uuid } from "uuid";
 
-const imageDir = path.join(__dirname, "./public", "Profesori");
+const imageDir = path.join(__dirname, "../public", "Profesori");
 const outputfilepath = path.join(__dirname, "imagelist.json");
 
 const generateImageList = () => {
@@ -12,6 +14,7 @@ const generateImageList = () => {
     }
     const imageFiles = files.filter((file) => /\.(png|jpe?g)$/.test(file));
     const imageList = imageFiles.map((file) => ({
+      id: uuidv4(),
       filename: file,
       name: file.replace(/_/g, " ").replace(/\.[^/.]+$/, ""),
     }));

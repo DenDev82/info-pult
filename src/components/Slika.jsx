@@ -1,12 +1,22 @@
 import React from "react";
 import "../Slika.css";
-function Slika(props) {
+import { useAdminStore } from "../admin-store";
+
+function Slika({ filename, name, onRemove, id }) {
+  const { isAdmin } = useAdminStore();
+
   return (
     <div className="slika">
-      <img src={props.filename} alt="slika" />
+      <img src={filename} alt="slika" />
       <br></br>
-      <h2>{props.name}</h2>
-      <p>Profesija</p>
+      <h2>{name}</h2>
+      {isAdmin && (
+        <>
+          <button className="remove-btn" onClick={() => onRemove(id)}>
+            remove
+          </button>
+        </>
+      )}
     </div>
   );
 }
