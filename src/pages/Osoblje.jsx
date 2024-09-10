@@ -1,34 +1,54 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import imageList from "../imagelist.json";
+import { getDatabase, ref, onValue, remove } from "firebase/database";
+import database from "../firebase";
 import Slika from "../components/Slika";
 import "../Osoblje.css";
-import { useAdminStore } from "../admin-store";
 
 const Osoblje = () => {
   const [osoblje, setOsoblje] = useState([]);
-  const { isAdmin } = useAdminStore((state) => ({
-    isAdmin: state.isAdmin,
-    setAdmin: state.setAdmin,
-  }));
+
   useEffect(() => {
-    setOsoblje(imageList);
+    // Initialize the Realtime Database
+    const osobljeRef = ref(database, "osoblje"); // Create a reference to 'osoblje'
+
+    // Listen for data changes
+    onValue(osobljeRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        // Convert the object to an array
+        const formattedData = Object.keys(data).map((key) => ({
+          firebaseId: key,
+          ...data[key],
+        }));
+        setOsoblje(formattedData);
+      }
+    });
   }, []);
-  const removePerson = (id) => {
-    setOsoblje(osoblje.filter((person) => person.id !== id));
+  const removePerson = async (firebaseId) => {
+    const personRef = ref(database, `osoblje/${firebaseId}`);
+
+    try {
+      await remove(personRef);
+      console.log(`Person with id: ${firebaseId} removed successfully`);
+      setOsoblje((prevOsoblje) =>
+        prevOsoblje.filter((person) => person.firebaseId !== firebaseId)
+      );
+    } catch (error) {
+      console.error("Error removing person: ", error);
+    }
   };
   return (
     <div className="osoblje">
       {osoblje.map((osoblje) => (
         <Slika
-          key={osoblje.id}
-          id={osoblje.id}
+          key={osoblje.firebaseId}
+          id={osoblje.firebaseId}
           filename={`/Profesori/${osoblje.filename}`}
           name={osoblje.name}
           onRemove={removePerson}
         />
       ))}
-      {isAdmin ? <p>ISUS</p> : <p>NIJE ISUS</p>}
     </div>
   );
 };
