@@ -1,12 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { getDatabase, ref, onValue, remove } from "firebase/database";
+import { ref, onValue, remove } from "firebase/database";
+import { useAdminStore } from "../admin-store";
 import database from "../firebase";
 import Slika from "../components/Slika";
 import "../Osoblje.css";
 
 const Osoblje = () => {
   const [osoblje, setOsoblje] = useState([]);
+  const { isAdmin } = useAdminStore();
 
   useEffect(() => {
     // Initialize the Realtime Database
@@ -39,17 +41,23 @@ const Osoblje = () => {
     }
   };
   return (
-    <div className="osoblje">
-      {osoblje.map((osoblje) => (
-        <Slika
-          key={osoblje.firebaseId}
-          id={osoblje.firebaseId}
-          filename={`/Profesori/${osoblje.filename}`}
-          name={osoblje.name}
-          onRemove={removePerson}
-        />
-      ))}
-    </div>
+    <>
+      <div className="osoblje">
+        {osoblje.map((osoblje) => (
+          <Slika
+            key={osoblje.firebaseId}
+            id={osoblje.firebaseId}
+            filename={osoblje.filename}
+            name={osoblje.name}
+            onRemove={removePerson}
+          />
+        ))}
+        {osoblje.map((osoblje) => {
+          console.log(osoblje.filename);
+        })}
+      </div>
+      {isAdmin && <button>Dodaj Osoblje</button>}
+    </>
   );
 };
 
