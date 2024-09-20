@@ -21,3 +21,17 @@
   width: 100%;
   height: auto;
 }
+
+.btnAdd {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: right;
+  width: 200;
+  height: 300;
+}
+
+/*.btnAdd button {
+  left: 50%;
+  margin-left: 22px;
+}*/

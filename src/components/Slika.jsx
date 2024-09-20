@@ -7,7 +7,7 @@ function Slika({ filename, name, onRemove, id }) {
 
   return (
     <div className="slika">
-      <img src={filename} alt="slika" />
+      <img src={filename} alt="slika" id="img" />
       <br></br>
       <h2>{name}</h2>
       {isAdmin && (
