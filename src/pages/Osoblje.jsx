@@ -71,9 +71,9 @@ const Osoblje = () => {
         <div className="btnAdd">
           {isAdmin && !addPress ? (
             <button onClick={addOsoblje}>Dodaj Osoblje</button>
-          ) : (
+          ) : isAdmin && addPress ? (
             <DodajOsoblje onSubmit={handleFormSubmit}></DodajOsoblje>
-          )}
+          ) : null}
         </div>
       </div>
     </>

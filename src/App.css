@@ -39,3 +39,9 @@ body {
   font-size: 512px;
   user-select: none;
 }
+
+.odjeljenja {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+}
