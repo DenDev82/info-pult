@@ -11,7 +11,7 @@ function MenuButton(props) {
   //ako je stranica o_projektu u pathu stoji tako a na p se pokazuje O projektu
   return (
     <div className="menu-button" onClick={redirect}>
-      <p>{props.stranica === "o_projektu" ? "O projektu" : props.stranica}</p>
+      <p>{props.ime}</p>
     </div>
   );
 }

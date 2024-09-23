@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import firebaseServices from "../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { ref as dbRef, set, get } from "firebase/database";
 const { v4: uuidv4 } = require("uuid");
 const database = firebaseServices.database;
-function DodajOdjeljenje({ onSubmit }) {
-  const [br, setBr] = useState("");
-  const [smjer, setSmjer] = useState("");
+const storage = firebaseServices.storage;
+function DodajVideo({ onSubmit }) {
+  const [slika, setSlika] = useState(null);
 
+  const handleFileChange = (e) => {
+    setSlika(e.target.files[0]);
+  };
   const getNextId = async () => {
-    const odjeljenjaRef = dbRef(database, "odjeljenja");
-    const snapshot = await get(odjeljenjaRef);
+    const videoRef = dbRef(database, "video");
+    const snapshot = await get(videoRef);
     const data = snapshot.val();
 
     if (data) {
@@ -23,18 +27,21 @@ function DodajOdjeljenje({ onSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!smjer || !br) {
-      console.log("No smjer or br found");
+    if (!slika) {
+      console.log("No image found");
     } else {
+      const storageRef = ref(storage, `video/${slika.name}`);
       try {
         const nextID = await getNextId();
-        const newOdjeljenjeRef = dbRef(database, `odjeljenja/${nextID}`);
-        await set(newOdjeljenjeRef, {
-          br: `${br}`,
-          smjer: `${smjer}`,
+        await uploadBytes(storageRef, slika);
+        const downloadUrl = await getDownloadURL(storageRef);
+        const newSlikaRef = dbRef(database, `video/${nextID}`);
+        await set(newSlikaRef, {
+          filename: downloadUrl,
+          name: `${slika.name}`,
           id: uuidv4(),
         });
-        alert("Odjeljenje uspjesno dodano");
+        alert("Slika uspjesno dodana");
       } catch (error) {
         console.error("Error uploading file: ", error);
       }
@@ -45,23 +52,15 @@ function DodajOdjeljenje({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Одјељење:</p>
+      <p>Видео:</p>
       <input
-        type="text"
-        id="br"
-        value={br}
-        onChange={(e) => setBr(e.target.value)}
-      />
-      <p>Смјер:</p>
-      <input
-        type="text"
-        id="smjer"
-        value={smjer}
-        onChange={(e) => setSmjer(e.target.value)}
+        type="file"
+        accept="video/mp4,video/x-m4v,video/*"
+        onChange={handleFileChange}
       />
       <button type="submit">Додај</button>
     </form>
   );
 }
 
-export default DodajOdjeljenje;
+export default DodajVideo;

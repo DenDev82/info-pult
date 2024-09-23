@@ -2,14 +2,15 @@ import React from "react";
 import "../Slika.css";
 import { useAdminStore } from "../admin-store";
 
-function Slika({ filename, name, onRemove, id }) {
+function VideoComp({ filename, onRemove, id }) {
   const { isAdmin } = useAdminStore();
 
   return (
     <div className="slika">
-      <img src={filename} alt="slika" id="img" />
+      <video width={800} height={600} autoPlay>
+        <source src={filename} type="video/mp4" />
+      </video>
       <br></br>
-      <h2>{name}</h2>
       {isAdmin && (
         <>
           <button className="remove-btn" onClick={() => onRemove(id)}>
@@ -21,4 +22,4 @@ function Slika({ filename, name, onRemove, id }) {
   );
 }
 
-export default Slika;
+export default VideoComp;

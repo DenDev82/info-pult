@@ -55,27 +55,27 @@ function DodajOsoblje({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Ime:</p>
+      <p>Име:</p>
       <input
         type="text"
         id="ime"
         value={ime}
         onChange={(e) => setIme(e.target.value)}
       />
-      <p>Prezime:</p>
+      <p>Презиме:</p>
       <input
         type="text"
         id="prezime"
         value={prezime}
         onChange={(e) => setPrezime(e.target.value)}
       />
-      <p>Slika:</p>
+      <p>Слика:</p>
       <input
         type="file"
         accept="image/jpeg, image/png, image/jpg"
         onChange={handleFileChange}
       />
-      <button type="submit">Dodaj</button>
+      <button type="submit">Додај</button>
     </form>
   );
 }

@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import firebaseServices from "../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { ref as dbRef, set, get } from "firebase/database";
 const { v4: uuidv4 } = require("uuid");
 const database = firebaseServices.database;
-function DodajOdjeljenje({ onSubmit }) {
-  const [br, setBr] = useState("");
-  const [smjer, setSmjer] = useState("");
+const storage = firebaseServices.storage;
+function DodajSlike({ onSubmit }) {
+  const [slika, setSlika] = useState(null);
 
+  const handleFileChange = (e) => {
+    setSlika(e.target.files[0]);
+  };
   const getNextId = async () => {
-    const odjeljenjaRef = dbRef(database, "odjeljenja");
-    const snapshot = await get(odjeljenjaRef);
+    const slikeRef = dbRef(database, "slike");
+    const snapshot = await get(slikeRef);
     const data = snapshot.val();
 
     if (data) {
@@ -23,18 +27,21 @@ function DodajOdjeljenje({ onSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!smjer || !br) {
-      console.log("No smjer or br found");
+    if (!slika) {
+      console.log("No image found");
     } else {
+      const storageRef = ref(storage, `slike/${slika.name}`);
       try {
         const nextID = await getNextId();
-        const newOdjeljenjeRef = dbRef(database, `odjeljenja/${nextID}`);
-        await set(newOdjeljenjeRef, {
-          br: `${br}`,
-          smjer: `${smjer}`,
+        await uploadBytes(storageRef, slika);
+        const downloadUrl = await getDownloadURL(storageRef);
+        const newSlikaRef = dbRef(database, `slike/${nextID}`);
+        await set(newSlikaRef, {
+          filename: downloadUrl,
+          name: `${slika.name}`,
           id: uuidv4(),
         });
-        alert("Odjeljenje uspjesno dodano");
+        alert("Slika uspjesno dodana");
       } catch (error) {
         console.error("Error uploading file: ", error);
       }
@@ -45,23 +52,15 @@ function DodajOdjeljenje({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Одјељење:</p>
+      <p>Слика:</p>
       <input
-        type="text"
-        id="br"
-        value={br}
-        onChange={(e) => setBr(e.target.value)}
-      />
-      <p>Смјер:</p>
-      <input
-        type="text"
-        id="smjer"
-        value={smjer}
-        onChange={(e) => setSmjer(e.target.value)}
+        type="file"
+        accept="image/jpeg, image/png, image/jpg"
+        onChange={handleFileChange}
       />
       <button type="submit">Додај</button>
     </form>
   );
 }
 
-export default DodajOdjeljenje;
+export default DodajSlike;

@@ -5,37 +5,37 @@ function OProjektu() {
   return (
     <div className="oprojektu">
       <p>
-        Na infopultu su radili učenici III-4 smjer tehničari informacionih
-        tehnologija na čelu sa profesorom Draganom Todorovićem. <br />
+        На инфопулту су радили ученици ИИИ-4 смјер техничари информационих
+        технологија на челу са професором Драганом Тодоровићем <br />
         <br />
-        Na ideju o izradi infopulta smo došli sasvim spontano. Vodeći neobavezni
-        razgovor na računarskoj sekciji osmislili smo projekat po kome će naša
-        škola JU SŠC „Jovan Cvijić“ u Modriči biti poznata. Na početku smo bili
-        nesigurni, nismo znali da li će nam škola odobriti novčana sredstva za
-        fizičke dijelove infopulta. Profesor Dragan nas je svakim danom
-        usmjeravao i davao nam vjetar u leđa, samim tim kompletan dizajn
-        aplikacije i izvještaj o istoj su završeni u roku od 5 radnih dana.
-        Otišli smo na sastanak kod direktorice i prezentovali naš projekat.
-        Direktorica nam je dala zeleno svjetlo i tada smo otpočeli sa radom.
-        <br />
-        <br />
-        Na dizajnu aplikacije su radili Igor Ilić i Olivera Ristić. U VUE.JS
-        tehnologiji su radili Siniša Savić, Dražen Božić i Borislav Vučićević.
-        Za HTML su bili zaduženi Nikola Pejić, Tijana Mijatović, Dražen Božić i
-        Olivera Ristić. U CSS-u su radili Milan Topalović, Borislav Vučićević i
-        Željana Filipović. Za JavaScript su bili zaduženi Milan Topalović i
-        Borislav Vučićević. Konsultanti su Luka Vujić i Dajana Lučić. Za Python
-        skriptu i OS bio je zadužen Denis Softić.
+        На идеју о изради инфопулта смо дошли сасвим спонтано. Водећи необавезни
+        разговор на рачунарској секцији осмислили смо пројекат по коме ће наша
+        школа ЈУ СШЦ „Јован Цвијић“ у Модричи бити позната. На почетку смо били
+        несигурни, нисмо знали да ли ће нам школа одобрити новчана средства за
+        физичке дијелове инфопулта. Професор Драган нас је сваким даном
+        усмјеравао и давао нам вјетар у леђа, самим тим комплетан дизајн
+        апликације и извјештај о истој су завршени у року од 5 радних дана.
+        Отишли смо на састанак код директорице и презентовали наш пројекат.
+        Директорица нам је дала зелено свјетло и тада смо отпочели са радом.
         <br />
         <br />
-        Svaki naš čas, bilo da se održao uživo na računarskoj sekciji ili onlajn
-        preko aplikacije Diskord, bio je prožet pozitivom, osmijesima ali i
-        vrijednim radom. Baš ta kombinacija je doprinjela uspješno završenoj
-        aplikaciji za projekat infopult.
+        На дизајну апликације су радили Игор Илић и Оливера Ристић. У ВУЕ.ЈС
+        технологији су радили Синиша Савић, Дражен Божић и Борислав Вучићевић.
+        За ХТМЛ су били задужени Никола Пејић, Тијана Мијатовић, Дражен Божић и
+        Оливера Ристић. У ЦСС-у су радили Милан Топаловић, Борислав Вучићевић и
+        Жељана Филиповић. За ЈаваСцрипт су били задужени Милан Топаловић и
+        Борислав Вучићевић. Консултанти су Лука Вујић и Дајана Лучић. За Пyтхон
+        скрипту и ОС био је задужен Денис Софтић.
         <br />
         <br />
-        Infopult v2.0 uradio Denis Softic učenik IV-2. Cijela aplikacija
-        razvijena u ReactJS :)
+        Сваки наш час, било да се одржао уживо на рачунарској секцији или онлајн
+        преко апликације Дискорд, био је прожет позитивом, осмијесима али и
+        вриједним радом. Баш та комбинација је доприњела успјешно завршеној
+        апликацији за пројекат инфопулт.
+        <br />
+        <br />
+        Инфопулт в2.0 урадио Денис Софтиц ученик ИВ-2. Цијела апликација
+        развијена у РеацтЈС :)
       </p>
       <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

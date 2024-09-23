@@ -4,27 +4,27 @@ function OSSC() {
   return (
     <div className="OSSC">
       <p>
-        JU Srednjoškolski Centar „Jovan Cvijić“ Modriča nastavlja tradiciju
-        modričkih srednjih škola od davne 1946. godine kada je počela sa radom
-        Škola učenika u privredi, i 1962. godine, od kada u Modriči postoji
-        Gimnazija. U dosadašnjem razvoju, modričke srednje škole su mijenjale
-        organizacione oblike. U prvoj fazi razvoja, odvojeno su djelovale
-        Gimnazija i Škola za učenike u privredi. Zajedničkom odlukom i uz
-        saglasnost prosvjetnih vlasti, ove dvije škole su se spojile u Centar za
-        srednje obrazovanje i vaspitanje, koji počinje sa radom 1. septembra
-        1972. godine. To bi se moglo označiti kao druga faza u razvoju srednjih
-        škola. Treća faza u razvoju srednjih škola u Modriči otpočinje stupanjem
-        na snagu novog Zakona o srednjem obrazovanju po kome se iz sastava
-        Centra za usmjereno obrazovanje i vaspitanje sa dvije radne jedinice
-        izdvajaju i konstituišu dvije škole i to: Gimnazija i
-        Tehničko-tehnološka škola. U Gimnaziju su svrstana zatečena odjeljenja
-        prosvjetne, prevodilačke i matematičke struke i pet novoupisanih
-        odjeljenja (školska 1991/1992. godina). U Tehničko-tehnološkoj školi
-        zadržane su mašinska i hemijska struka, a kasnije je uvedena i
-        elektrotehnička struka. Od školske 2002/2003 godine, odlukom
-        Ministarstva za prosvjetu Republike Srpske, Gimnazija i
-        Tehničko-tehnološka škola spojene su u Srednjoškolski centar „Jovan
-        Cvijić“ Modriča i u tom organizacionom obliku trenutno postoji i radi.
+        ЈУ Средњошколски Центар „Јован Цвијић“ Модрича наставља традицију
+        модричких средњих школа од давне 1946. године када је почела са радом
+        Школа ученика у привреди, и 1962. године, од када у Модричи постоји
+        Гимназија. У досадашњем развоју, модричке средње школе су мијењале
+        организационе облике. У првој фази развоја, одвојено су дјеловале
+        Гимназија и Школа за ученике у привреди. Заједничком одлуком и уз
+        сагласност просвјетних власти, ове двије школе су се спојиле у Центар за
+        средње образовање и васпитање, који почиње са радом 1. септембра 1972.
+        године. То би се могло означити као друга фаза у развоју средњих школа.
+        Трећа фаза у развоју средњих школа у Модричи отпочиње ступањем на снагу
+        новог Закона о средњем образовању по коме се из састава Центра за
+        усмјерено образовање и васпитање са двије радне јединице издвајају и
+        конституишу двије школе и то: Гимназија и Техничко-технолошка школа. У
+        Гимназију су сврстана затечена одјељења просвјетне, преводилачке и
+        математичке струке и пет новоуписаних одјељења (школска 1991/1992.
+        година). У Техничко-технолошкој школи задржане су машинска и хемијска
+        струка, а касније је уведена и електротехничка струка. Од школске
+        2002/2003 године, одлуком Министарства за просвјету Републике Српске,
+        Гимназија и Техничко-технолошка школа спојене су у Средњошколски центар
+        „Јован Цвијић“ Модрича и у том организационом облику тренутно постоји и
+        ради.
       </p>
       <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

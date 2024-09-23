@@ -47,7 +47,6 @@ const Osoblje = () => {
 
   const addOsoblje = () => {
     setAddPress(true);
-    console.log(addPress);
   };
   const handleFormSubmit = (event) => {
     console.log("Form submitted"); // Add your logic for form submission here
@@ -65,12 +64,12 @@ const Osoblje = () => {
             onRemove={removePerson}
           />
         ))}
-        {/*osoblje.map((osoblje) => {
-          console.log(osoblje.filename);
-        })*/}
+
         <div className="btnAdd">
           {isAdmin && !addPress ? (
-            <button onClick={addOsoblje}>Dodaj Osoblje</button>
+            <button style={{ width: "200px" }} onClick={addOsoblje}>
+              Додај Особље
+            </button>
           ) : isAdmin && addPress ? (
             <DodajOsoblje onSubmit={handleFormSubmit}></DodajOsoblje>
           ) : null}

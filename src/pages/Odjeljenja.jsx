@@ -64,14 +64,16 @@ const Odjeljenja = () => {
                 className="remove-btn"
                 onClick={() => removeOdj(odjeljenja.firebaseId)}
               >
-                remove
+                Уклони
               </button>
             ) : null}
           </>
         ))}
         <div className="btnAdd">
           {isAdmin && !addPress ? (
-            <button onClick={addOdjeljenje}>Dodaj Odjeljenje</button>
+            <button style={{ width: "230px" }} onClick={addOdjeljenje}>
+              Додај Одјељење
+            </button>
           ) : isAdmin && addPress ? (
             <DodajOdjeljenje onSubmit={handleFormSubmit}></DodajOdjeljenje>
           ) : null}
